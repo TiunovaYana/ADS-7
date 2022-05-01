@@ -11,18 +11,16 @@ class TPQueue {
     ITEM * prev;
   };
   ITEM* head, * tail;
-  ITEM* create(const T& value);
-  
+  TPQueue::ITEM* create(const T& value);
+ 
  public:
   TPQueue():head(nullptr), tail(nullptr) {}
   void push(const T&);
   T pop();
 };
 
-};
-
 template<typename T>
-typename ITEM * TPQueue<T>::create(const T& data) {
+typename TPQueue<T>::ITEM * TPQueue<T>::create(const T& data) {
   ITEM * item = new ITEM;
   item -> data = data;
   item -> next = nullptr;
@@ -47,7 +45,7 @@ void TPQueue <T>::push(const T& data) {
     item -> next = temp;
     head = item;
   } else {
-    tmp -> prev -> next = item;
+    temp -> prev -> next = item;
     item -> prev = temp -> prev;
     item -> next = temp;
     temp -> prev = item;
