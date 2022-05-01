@@ -12,7 +12,7 @@ class TPQueue {
   };
   ITEM* head, * tail;
   TPQueue::ITEM* create(const T& value);
- 
+
  public:
   TPQueue():head(nullptr), tail(nullptr) {}
   void push(const T&);
